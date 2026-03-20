@@ -59,7 +59,7 @@ llm = AzureChatOpenAI(
     azure_endpoint=azure_openai_endpoint,
     azure_ad_token_provider=token_provider,
     api_version=os.environ.get("OPENAI_API_VERSION", "2025-03-01-preview"),
-    use_responses_api=True,
+    # use_responses_api=True, # there's a bug in response api that will throw error when mcp tool name contains "."
     callbacks=[_AIMessageLogger()],
 )
 
